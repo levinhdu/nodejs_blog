@@ -7,6 +7,7 @@
                 <th scope="col">Tên khóa học</th>
                 <th scope="col">Trình độ</th>
                 <th scope="col">Thời gian tạo</th>
+                <th scope="col">Thời gian sửa</th>
                 <th></th>
             </tr>
         </thead>
@@ -17,6 +18,7 @@
                 <td>{{this.name}}</td>
                 <td>{{this.level}}</td>
                 <td>{{this.createdAt}}</td>
+                <td>{{this.updatedAt}}</td>
                 <td>
                     <a href="/courses/{{this._id}}/edit" class="btn btn-link">Sửa</a>
                     <a href="" class="btn btn-link"  data-toggle="modal" data-id="{{this._id}}" data-target="#modal-course-delete">Xóa</a>
@@ -70,8 +72,5 @@
       btnDeleteCourse.onclick = function (){
         deleteForm.action = '/courses/' + courseId + '?_method=DELETE'
         deleteForm.submit()
-      }
-
-    })
-    
+      } })
 </script>

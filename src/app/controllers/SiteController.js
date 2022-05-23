@@ -4,24 +4,14 @@ const { mutipleMongooseToOject } = require('../../until/mongoose');
 class SiteController {
   //[GET] /
   index(req, res, next) {
-    // Course.find({}, function(err, courses){
-    //   if(!err) {
-    //     res.json(courses);
-    //   } else{
-    //     next(err);
-    //   }
-    // });
-      Course.find({})
-          .then(courses => {
-              res.render('home',{ 
-                courses : mutipleMongooseToOject(courses)
-              });
-          })
-          .catch(next);  
-    
-    //res.render('home');
+    Course.find({})
+      .then(courses => {
+        res.render('home',{ 
+        courses : mutipleMongooseToOject(courses)
+      });
+      })
+      .catch(next);  
   }
-
   //[GET] /search
   search(req, res) {
     res.render('search');
